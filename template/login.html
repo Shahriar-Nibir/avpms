@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .init{
+        background-color: #577ad8;
+        border: none !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        width: 100%;
+    }
+    .none{
+        text-decoration: none;
+        color:rgb(59, 58, 58);
+    }
+    .none:hover{
+        text-decoration: none;
+        color:rgb(59, 58, 58);
+    }
+</style>
+
+<div class="col-12 d-flex justify-content-center align-items-center">
+    <form method='POST' action='' class='col-12'>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="username" class="form-control" id="" aria-describedby="usernameHelp" placeholder="Your Username" name='username'>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name='password'>
+        </div>
+        {% for m in messages %}
+        <p class='text-danger'>{{m}}</p>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary init mt-4">Log in</button>
+      </form>
+</div>
+{% endblock %}
