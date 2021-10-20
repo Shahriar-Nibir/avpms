@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="col-12 h1 my-4 text-center">
+        Vehicle Details
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">BA No</th>
+            <th scope="col">Class</th>
+            <th scope="col">Type</th>
+            <th scope="col">KM Reading</th>
+            <th scope="col">Authority</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in veh %}
+          <tr>
+            <th>{{v.ba_no}}</th>
+            <td>{{v.vehicle_class}}</td>
+            <td>{{v.type}}</td>
+            <td>{{v.km_reading}}</td>
+            <td>{{v.autority}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

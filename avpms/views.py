@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
-
+from .models import *
 # Create your views here.
 
 
@@ -35,3 +35,9 @@ def homeDvr(request):
 def logoutUser(request):
     logout(request)
     return redirect('loginUser')
+
+
+def vehDetail(request):
+    veh = Vehicle.objects.all()
+    context = {'veh': veh}
+    return render(request, 'vehDetail.html', context)

@@ -1,21 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <title>avpms</title>
-</head>
-<body>
-    This is the home page for NCO
-    
-    <a href="{% url 'logoutUser' %}" class='btn btn-sm btn-primary'>Logout</a>
+{% extends 'home.html' %}
+{% load static %}
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% block content %}
+<div class="hero">
+    <div class="in-hero d-flex justify-content-center align-items-center text-white text-center">
+      <div class="row  d-flex justify-content-center align-items-center text-white text-center">
+        <div class='col-12 h1'>Automated Vehicle Management System</div>
+        <div class='col-8 my-3 h5 text-center px-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita suscipit sed asperiores fugiat, et inventore repellendus ducimus minima. Officiis, earum.</div>>
+    </div>
+  </div>
+  </div>
+</div>
 
-</body>
-</html>
+<div class="main d-flex justify-content-center align-items-center">
+
+
+
+<div class="container">
+    <div class="row mb-5 mt-3 py-4 d-flex justify-content-center align-items-center">
+        
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-speedometer2" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                POL
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-layers-half" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Request Vehicle
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-check-square" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Approvals
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="{% url 'vehDetail' %}" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-truck" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Vehicle Details
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-person-lines-fill" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                NCO List
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-arrow-left-right" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Handing Taking
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-tools" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Repair Vehicle Details
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12 my-4">
+            <a href="#" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-menu-button-wide-fill" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Daily Reports
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+        
+    </div>
+</div>
+</div>
+
+<!-- <div class="row col-7 justify-centent-center align-items-center my-4">
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        POL
+    </a>
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        Request Vehicle
+    </a>
+    <a href='' class="bg-dark col-md-12 py-5 mx-2 my-2 text-white text-center nav-link">
+        Approvals
+    </a>
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        Vehicle Details
+    </a>
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        NCO List
+    </a>
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        Handing Taking
+    </a>
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        Repair Vehicle Details
+    </a>
+    <a href='' class="bg-dark col-md-12 mx-2 my-2 py-5 text-white text-center nav-link">
+        Daily Reports
+    </a>
+    </div> -->
+{% endblock %}

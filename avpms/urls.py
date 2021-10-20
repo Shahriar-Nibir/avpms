@@ -8,4 +8,5 @@ urlpatterns = [
     path('homeAO', views.homeAO, name='homeAO'),
     path('homeNCO', views.homeNCO, name='homeNCO'),
     path('homeDvr', views.homeDvr, name='homeDvr'),
+    path('vehDetail', views.vehDetail, name='vehDetail'),
 ]
