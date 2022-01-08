@@ -26,6 +26,8 @@ class NCO(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     phone_no = models.CharField(max_length=100, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='nco_image/')
+    from_date = models.DateField(null=True)
+    to_date = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.snk_no
@@ -80,13 +82,13 @@ class Vehicle(models.Model):
 
 class Daily_report(models.Model):
     vehicle = models.ForeignKey(Vehicle, null=True, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    date = models.DateField(null=True, auto_now=True, blank=True)
+    driver = models.ForeignKey(Driver, null=True, on_delete=models.CASCADE)
+    date = models.DateField(null=True, blank=True)
     in_time = models.TimeField(null=True, blank=True)
     out_time = models.TimeField(null=True, blank=True)
     RV = models.CharField(max_length=200, null=True, blank=True)
     reason = models.CharField(max_length=300, null=True, blank=True)
-    qm_permission = models.BooleanField(default=True)
+    qm_permission = models.BooleanField(default=False)
 
     def __str__(self):
         return self.vehicle.ba_no + str(self.date)
@@ -102,3 +104,30 @@ class Daily_state(models.Model):
 
     def __str__(self):
         return str(self.date)
+
+
+class RepairVehicle(models.Model):
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
+    number = models.CharField(max_length=100, null=True, unique=True)
+    last_repair_date = models.DateField(null=True, blank=True)
+    info = models.TextField(null=True, blank=True)
+    repair_date = models.DateField(null=True)
+    vehicle_model = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.vehicle.ba_no + str(self.repair_date)
+
+
+class POL(models.Model):
+    TYPE = (
+        ('Petrolium', 'Petrolium'),
+        ('Oil', 'Oil'),
+        ('Lubricant', 'Lubricant'),
+    )
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
+    type = models.CharField(max_length=200, null=True, choices=TYPE)
+    authorised = models.PositiveIntegerField(null=True)
+    stock = models.PositiveIntegerField(null=True)
+
+    def __str__(self):
+        return self.vehicle.ba_no + self.type

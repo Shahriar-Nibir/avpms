@@ -33,7 +33,7 @@
         </div>
 
         <div class="col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="2000">
-            <a href="" class='links nav-link text-dark'>
+            <a href="{% url 'dailyReport' %}" class='links nav-link text-dark'>
             <div class="col-12 d-flex justify-content-center align-items-center">
                 <i class="bi bi-menu-button-wide-fill" style="font-size: 6rem;"></i>
             </div>
@@ -59,7 +59,21 @@
             </div>
         </a>
         </div>
-        
+        {% if request.user.username == 'QM' %}
+        <div class="col-md-4 col-sm-6 col-12" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="3000">
+            <a href="{% url 'pendingReq' %}" class='links nav-link text-dark'>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <i class="bi bi-question-square" style="font-size: 6rem;"></i>
+            </div>
+            <div class="col-12 h2 text-center">
+                Pending Requests
+            </div>
+            <div class="col-12 h6 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsam!
+            </div>
+        </a>
+        </div>
+        {% endif %}
     </div>
 </div>
 </div>

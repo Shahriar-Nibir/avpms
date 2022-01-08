@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+      <div class="col-12 h1 my-4 text-center">
+        POL for Vehicles
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Vehicle</th>
+            <th scope="col">Type</th>
+            <th scope="col">Authorised</th>
+            <th scope="col">Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in pol %}
+          <tr>
+            <th>{{v.vehicle}}</th>
+            <td>{{v.type}}</td>
+            <td>{{v.authorised}}</td>
+            <td>{{v.stock}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

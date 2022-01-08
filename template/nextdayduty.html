@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+      <div class="col-12 h1 my-4 text-center">
+        Your Next Day's Duty
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Vehicle</th>
+            <th scope="col">Date</th>
+            <th scope="col">RV</th>
+            <th scope="col">Out Time</th>
+            <th scope="col">Reason</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in duties %}
+          <tr>
+            <th>{{v.vehicle}}</th>
+            <td>{{v.date}}</td>
+            <td>{{v.RV}}</td>
+            <td>{{v.out_time}}</td>
+            <td>{{v.reason}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

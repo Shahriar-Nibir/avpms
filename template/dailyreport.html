@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="col-12 h1 my-4 text-center">
+        Todays Report
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Vehicle</th>
+            <th scope="col">Driver</th>
+            <th scope="col">Date</th>
+            <th scope="col">RV</th>
+            <th scope="col">Out Time</th>
+            <th scope="col">To Time</th>
+            <th scope="col">Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in dr %}
+          <tr>
+            <th>{{v.vehicle}}</th>
+            <td>{{v.driver}}</td>
+            <td>{{v.date}}</td>
+            <td>{{v.RV}}</td>
+            <td>{{v.out_time}}</td>
+            <td>{{v.to_time}}</td>
+            <td>{{v.reason}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

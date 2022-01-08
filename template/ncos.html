@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="col-12 h1 my-4 text-center">
+        All NCOs
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Snk No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone No</th>
+            <th scope="col">from_date</th>
+            <th scope="col">to_date</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for n in ncos %}
+          <tr>
+            <th>{{n.snk_no}}</th>
+            <td>{{n.name}}</td>
+            <td>{{n.phone_no}}</td>
+            <td>{{n.from_date}}</td>
+            <td>{{n.to_date}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
